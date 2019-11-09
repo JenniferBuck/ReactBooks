@@ -2,7 +2,7 @@
     display:grid;
     grid-template-columns: 2fr 1fr;
     background: rgb(47,53,51);
-    background: linear-gradient(166deg, rgba(47,53,51,1) 51%, rgba(0,204,137,0.41780462184873945) 88%);
+    background: linear-gradient(166deg, rgba(47,53,51,1) 51%, rgba(9, 117, 81, 0.63) 88%);
     text-align: center;   
     justify-items: center;
     align-items: center;
@@ -45,7 +45,6 @@
 
 .book-wrapper > div > h2 img:hover {
     transform: scale(1.08);
-
 
 }
 

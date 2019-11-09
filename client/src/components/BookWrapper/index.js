@@ -31,7 +31,7 @@ render(){
         <div className="book-wrapper">
             <div>
             <h1>{title} Written By : {authors}</h1>
-            <h3>Synopsis :{description}</h3>
+            <h3>Synopsis : {description}</h3>
             </div>
             <div>
             

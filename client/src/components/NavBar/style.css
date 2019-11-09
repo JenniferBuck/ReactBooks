@@ -1,12 +1,11 @@
 .nav-wrapper{
 
     display: flex;
-    padding: 5px;
 
 }
 
 .link-wrapper {
-    margin-right:15px;
+    margin:0 25px;
 
 }
 
