@@ -34,7 +34,7 @@ render()
             <div>
             
             <h2><img alt={title +"image"} src={image}></img></h2>
-            <h2><a className="link" target="_blank" href={link}>Link to Book</a></h2>
+            <h2><a className="link" rel="noopener noreferrer" target="_blank" href={link}>Link to Book</a></h2>
             <h2><button className="save-btn" onClick={()=> this.handleClick(this.props)}>Save Book</button></h2>
             <h2>{this.state.message}</h2>
             </div>
