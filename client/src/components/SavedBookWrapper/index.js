@@ -17,7 +17,7 @@ class SavedBookWrapper extends Component {
                 <div>
 
                     <h2><img alt={title + "image"} src={image}></img></h2>
-                    <h2><a className="link" href={link}>Link to Book</a></h2>
+                    <h2><a className="link" href={link} target="_blank">Link to Book</a></h2>
                     <h2><button className="delete-btn" onClick={() => handleClick(_id)}>Delete Book</button></h2>
             
                 </div>

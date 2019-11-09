@@ -25,7 +25,7 @@ class Saved extends Component{
 
     handleClick = async(id) => {
         this.deleteBook(id)
-        setTimeout(this.findSavedBooks)
+        setTimeout(this.findSavedBooks,500)
         
     }  
 
