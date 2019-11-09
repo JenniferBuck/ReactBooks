@@ -9,5 +9,11 @@ export default {
   saveBook: book => {
     console.log(book)
     return axios.post("/api/books",book)
+  },
+  findSavedBooks: () => {
+    return axios.get("/api/books")
+  },
+  deleteSavedBook: (id) => {
+    return axios.delete(`/api/books/${id}`)
   }
 };

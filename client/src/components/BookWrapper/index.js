@@ -4,27 +4,24 @@ import API from '../../api'
 
 class BookWrapper extends Component{
 
+    state = {
+        message :""
+    }
+
     saveArticle = (book) =>{
         API.saveBook(book)
+        this.setState({message:"This Book Has Been Saved! "})
 
     }
 
     handleClick = (book) => {
   
-        let bookObj = {
-            title:book.title,
-            authors: book.authors,
-            description: book.description,
-            image: book.image,
-            link: book.link,
-
-        }
-      
-        this.saveArticle(bookObj)
+        this.saveArticle(book)
     }
 
 
-render(){
+render()
+{
     const {authors,title,description,link,image} = this.props
   
     return(
@@ -32,12 +29,14 @@ render(){
             <div>
             <h1>{title} Written By : {authors}</h1>
             <h3>Synopsis : {description}</h3>
+           
             </div>
             <div>
             
-            <h2><img ref="image" src={image}></img></h2>
+            <h2><img alt={title +"image"} src={image}></img></h2>
             <h2><a className="link" href={link}>Link to Book</a></h2>
-            <button className="save-btn" onClick={()=> this.handleClick(this.props)}>Save Book</button>
+            <h2><button className="save-btn" onClick={()=> this.handleClick(this.props)}>Save Book</button></h2>
+            <h2>{this.state.message}</h2>
             </div>
         </div>
     )

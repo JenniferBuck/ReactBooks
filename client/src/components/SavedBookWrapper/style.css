@@ -20,7 +20,7 @@
     transition: transform 1s ease;
 
 }
-.save-btn {
+.delete-btn {
     background:#738184;
     line-height: 3rem;
     color: #FFF;
@@ -31,7 +31,7 @@
 
 }
 
-.save-btn:hover {
+.delete-btn:hover {
 
     color:blue;
     transform: scale(1.08);
