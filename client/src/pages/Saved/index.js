@@ -17,25 +17,14 @@ class Saved extends Component{
     }
 
     findSavedBooks = async () =>{
-        let fetchingBooks = await API.findSavedBooks()
-        let foundBooks = await fetchingBooks
-        this.setState({savedbooks:foundBooks.data},()=>console.log(this.state.savedbooks))
+        let {data:savedBooks} = await API.findSavedBooks()
+        this.setState({savedbooks:savedBooks},()=>console.log(this.state.savedbooks))
     } 
 
-
-    handleClick = id => {
-        this.deleteBook(id)
-        setTimeout(this.findSavedBooks,500)
-        
+    handleClick = async id => {
+        await API.deleteSavedBook(id)
+        this.findSavedBooks()     
     }  
-
-    deleteBook = id => {
-        API.deleteSavedBook(id)
-    }
-
-
-
-
 
     render(){
         return(

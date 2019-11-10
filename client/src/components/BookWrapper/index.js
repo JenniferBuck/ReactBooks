@@ -5,7 +5,7 @@ import API from '../../api'
 class BookWrapper extends Component{
 
     state = {
-        message :""
+        message : ""
     }
 
     saveArticle = (book) =>{
@@ -14,14 +14,8 @@ class BookWrapper extends Component{
 
     }
 
-    handleClick = (book) => {
-  
-        this.saveArticle(book)
-    }
 
-
-render()
-{
+render(){
     const {authors,title,description,link,image} = this.props
   
     return(
@@ -35,7 +29,7 @@ render()
             
             <h2><img alt={title +"image"} src={image}></img></h2>
             <h2><a className="link" rel="noopener noreferrer" target="_blank" href={link}>Link to Book</a></h2>
-            <h2><button className="save-btn" onClick={()=> this.handleClick(this.props)}>Save Book</button></h2>
+            <h2><button className="save-btn" onClick={()=> this.saveArticle(this.props)}>Save Book</button></h2>
             <h2>{this.state.message}</h2>
             </div>
         </div>

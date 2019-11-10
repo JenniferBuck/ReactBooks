@@ -1,11 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './style.css'
 
-class SavedBookWrapper extends Component {
-    
-
-    render() {
-        const {handleClick, _id, authors, title, description, link, image } = this.props
+const SavedBookWrapper = props => {
+        const {handleClick, _id, authors, title, description, link, image } = props
 
         return (
 
@@ -26,7 +23,5 @@ class SavedBookWrapper extends Component {
         )
 
     }
-
-}
 
 export default SavedBookWrapper

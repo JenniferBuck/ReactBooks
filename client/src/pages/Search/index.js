@@ -12,7 +12,8 @@ class Search extends Component {
 
     state = {
         query: "",
-        books: []
+        books: [],
+        message:""
     }
 
 
@@ -25,18 +26,15 @@ class Search extends Component {
 
     }
 
-    displayBooks = data => {
-        this.setState({ books: data.items })
-        this.setState({ query: "" })
-
-
-    }
 
     handleFormSearch = async (event) => {
         event.preventDefault()
-        let search = await API.searchBooks(this.state.query)
-        let results = await search
-        this.displayBooks(results.data)
+
+        let { data: results } = await API.searchBooks(this.state.query)
+        this.setState({
+            books: results.items,
+            query: ""
+        })
 
     }
 
@@ -68,7 +66,7 @@ class Search extends Component {
 
 
                 </SearchResultsWrapper>
- 
+
 
 
             </SearchWrapper>
