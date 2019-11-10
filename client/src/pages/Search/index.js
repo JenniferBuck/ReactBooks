@@ -68,7 +68,7 @@ class Search extends Component {
 
 
                 </SearchResultsWrapper>
-
+ 
 
 
             </SearchWrapper>
