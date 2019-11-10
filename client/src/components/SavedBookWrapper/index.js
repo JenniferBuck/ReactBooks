@@ -29,8 +29,4 @@ class SavedBookWrapper extends Component {
 
 }
 
-
-
-
-
 export default SavedBookWrapper
