@@ -27,7 +27,7 @@ class Search extends Component {
     }
 
 
-    handleFormSearch = async (event) => {
+    handleFormSearch = async event => {
         event.preventDefault()
 
         let { data: results } = await API.searchBooks(this.state.query)

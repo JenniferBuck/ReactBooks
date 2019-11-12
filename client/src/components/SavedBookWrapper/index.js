@@ -4,7 +4,6 @@ import './style.css'
 const SavedBookWrapper = props => {
         const {handleClick, _id, authors, title, description, link, image } = props
 
-            console.log(authors)
         return (
 
             <div key={_id} className="book-wrapper">
