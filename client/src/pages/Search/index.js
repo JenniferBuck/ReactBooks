@@ -13,7 +13,6 @@ class Search extends Component {
     state = {
         query: "",
         books: [],
-        message:""
     }
 
 

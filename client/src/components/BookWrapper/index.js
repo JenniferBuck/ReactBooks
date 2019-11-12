@@ -2,13 +2,13 @@ import React,{Component} from 'react'
 import './style.css'
 import API from '../../api'
 
-class BookWrapper extends Component{
+class BookWrapper extends Component {
 
     state = {
         message : ""
     }
 
-    saveArticle = (book) =>{
+    saveArticle = book => {
         API.saveBook(book)
         this.setState({message:"This Book Has Been Saved! "})
 
