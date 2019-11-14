@@ -13,7 +13,7 @@ const SavedBookWrapper = props => {
                 </div>
                 <div>
 
-                    <h2><img alt={title + "image"} src={image}></img></h2>
+                    <h2><img alt={title + " image"} src={image}></img></h2>
                     <h2><a className="link" href={link} rel="noopener noreferrer" target="_blank">Link to Book</a></h2>
                     <h2><button className="delete-btn" onClick={() => handleClick(_id)}>Delete Book</button></h2>
             
