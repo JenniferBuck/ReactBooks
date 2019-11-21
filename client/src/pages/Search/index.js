@@ -13,8 +13,6 @@ const Search = () => {
 
     let handleInputChange = event => {
                 const {value} = event.target
-        
-                
                 setQuery(value)
         
             }
@@ -25,6 +23,7 @@ const Search = () => {
         
                 let { data: results } = await API.searchBooks(query)
                 searchBooks(results.items)
+                console.log(books)
                 setQuery("")
              
             }

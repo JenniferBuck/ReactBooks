@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import SearchWrapper from '../../components/SearchWrapper'
 import SearchResultsWrapper from '../../components/SearchResultsWrapper'
 import NoResults from '../../components/NoResults'
@@ -11,20 +11,24 @@ const Saved = () => {
 
     const [books,setBooks] = useState([])
 
-        const componentDidMount = () => {
+    
+    useEffect(() => {
         findSavedBooks()
-    }
+        
+      },[setBooks]);
 
     const findSavedBooks = async () =>{
         const {data:savedBooks} = await API.findSavedBooks()
+        console.log(savedBooks)
         setBooks(savedBooks)
     } 
+
 
     const handleClick = async id => {
         await API.deleteSavedBook(id)
         findSavedBooks()     
     }  
-    componentDidMount()
+
 
         return(
             <SearchWrapper>
@@ -61,7 +65,7 @@ const Saved = () => {
 
 }
 
-// class Saved extends Component{
+// class Saved extends React.Component{
 
 //     state = {
 //         savedbooks: []
