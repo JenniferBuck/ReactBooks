@@ -7,6 +7,10 @@ Search and save books from the Google Books API
 ## Live Link
 https://mighty-refuge-59349.herokuapp.com/
 
+
+## Screenshot
+![Screenshot](/ss/googlebooks.png)
+
 ## Objective 
 
 I wanted to create a MERN stack application that allows the user to search and save books.  Utilizing Google's API & MongoDB, I allow the user to post, delete, and read from the database.
