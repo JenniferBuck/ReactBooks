@@ -12,11 +12,12 @@ const BookWrapper = props => {
     }
 
     const {authors,title,description,link,image} = props
-  
+  console.log(props)
     return(
         <div className="book-wrapper">
             <div>
-            <h1>{title} Written By : {authors.join(", ")}</h1>
+            <h1>{title}</h1>
+            <h1>Written By : {authors.join(", ")}</h1>
             <h3>Synopsis : {description}</h3>
            
             </div>
