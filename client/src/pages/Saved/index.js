@@ -1,18 +1,19 @@
-import React,{useState,useEffect} from 'react'
+import React,{useContext,useEffect} from 'react'
 import SearchWrapper from '../../components/SearchWrapper'
 import SearchResultsWrapper from '../../components/SearchResultsWrapper'
 import NoResults from '../../components/NoResults'
 import SavedBookWrapper from '../../components/SavedBookWrapper'
 import API from '../../api/index'
 import './style.css';
+import {SavedBooksContext} from '../../Hooks'
+
 
 
 
 
 const Saved = () => {
 
-    const [books,setBooks] = useState([])
-
+const [savedbooks,setSavedBooks] = useContext(SavedBooksContext)
     
     useEffect(() => {
         findSavedBooks()
@@ -22,7 +23,7 @@ const Saved = () => {
     const findSavedBooks = async () =>{
         const {data:savedBooks} = await API.findSavedBooks()
         console.log(savedBooks)
-        setBooks(savedBooks)
+        setSavedBooks(savedBooks)
     } 
 
 
@@ -40,9 +41,9 @@ const Saved = () => {
             
         
              <SearchResultsWrapper>
-                {books && books.length > 0 ? 
+                {savedbooks && savedbooks.length > 0 ? 
                 
-                books.map(book =>(
+                savedbooks.map(book =>(
                     <SavedBookWrapper
                     key={book._id}
                     _id={book._id}

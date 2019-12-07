@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import SearchWrapper from '../../components/SearchWrapper'
 import Form from '../../components/Form'
 import SearchResultsWrapper from '../../components/SearchResultsWrapper'
@@ -6,12 +6,13 @@ import BookWrapper from '../../components/BookWrapper'
 import API from '../../api'
 import NoResults from '../../components/NoResults'
 import Hooks from '../../Hooks'
+import {QueryContext,SearchBooksContext} from '../../Hooks'
 
 
 const Search = () => {
 
-    const [query, setQuery] = useState("")
-    const [books, searchBooks] = useState([])
+    const [query, setQuery] = useContext(QueryContext)
+    const [books, searchBooks] = useContext(SearchBooksContext)
 
     let handleInputChange = event => {
                 const {value} = event.target
