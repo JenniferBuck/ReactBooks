@@ -6,7 +6,7 @@ Search and save books from the Google Books API
 
 ## Objective 
 
-I wanted to create a MERN stack application that allows the user to search and save books.  Utilizing Google's API & MongoDB, I allow the user to post, delete, and read from the database.
+I wanted to create a MERN stack application that allows the user to search and save books.  Utilizing Google's API & MongoDB, I allow the user to post, delete, and read from the database.  I also took advantage of React Hooks to allow for functional based components. 
 
 
 ## Live Link
