@@ -7,6 +7,8 @@ import API from '../../api/index'
 import './style.css';
 
 
+
+
 const Saved = () => {
 
     const [books,setBooks] = useState([])
@@ -15,7 +17,7 @@ const Saved = () => {
     useEffect(() => {
         findSavedBooks()
         
-      },[setBooks]);
+      },[]);
 
     const findSavedBooks = async () =>{
         const {data:savedBooks} = await API.findSavedBooks()

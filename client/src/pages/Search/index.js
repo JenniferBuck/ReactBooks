@@ -5,6 +5,8 @@ import SearchResultsWrapper from '../../components/SearchResultsWrapper'
 import BookWrapper from '../../components/BookWrapper'
 import API from '../../api'
 import NoResults from '../../components/NoResults'
+import Hooks from '../../Hooks'
+
 
 const Search = () => {
 
@@ -41,6 +43,7 @@ const Search = () => {
                         <SearchResultsWrapper>
         
                             {books && books.length > 0 ? books.map(book => (
+                                <Hooks>
                                 <BookWrapper
                                     key={book.id}
                                     authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
@@ -49,6 +52,7 @@ const Search = () => {
                                     link={book.volumeInfo.infoLink}
                                     image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "#"}
                                 />
+                                </Hooks>
         
                             )) : <NoResults />}
         

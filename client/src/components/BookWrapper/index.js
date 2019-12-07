@@ -1,10 +1,11 @@
-import React,{useState} from 'react'
+import React,{useContext} from 'react'
 import './style.css'
 import API from '../../api'
+import {MessageContext} from '../../Hooks'
 
 const BookWrapper = props => {
 
-    const [message, setMessage] = useState("")
+    const [message,setMessage] = useContext(MessageContext)
     
     const saveArticle = book => {
         API.saveBook(book)
@@ -12,7 +13,6 @@ const BookWrapper = props => {
     }
 
     const {authors,title,description,link,image} = props
-  console.log(props)
     return(
         <div className="book-wrapper">
             <div>
