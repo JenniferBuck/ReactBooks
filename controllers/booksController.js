@@ -2,31 +2,40 @@ const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
-  findAll: function(req, res) {
-    db.Book
-      .find({})
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  findAll: async (req, res) => {
+    try {
+      let dbModel = await db.Book.find({})
+      res.json(dbModel)
+    }
+    catch (error) {
+      console.log(error)
+    }
+
   },
-  findById: function(req, res) {
-    db.Book
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+
+  findById: async (req,res) =>{
+    try{
+    let dbModel = await db.Book.findById({_id:req.params.ids})
+    res.json(dbModel)
+    }
+    catch (error){
+      res.status(422).json(error)
+    }
+
   },
-  create: function(req, res) {
+  create: function (req, res) {
     db.Book
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
+  update: function (req, res) {
     db.Book
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
+  remove: function (req, res) {
     db.Book
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
