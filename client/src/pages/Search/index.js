@@ -38,7 +38,6 @@ const Search = () => {
                             name="query"
                             value={query}
                             onChange={handleInputChange}
-                            placeholder="Type Here To Search For A Book"
                             onClick={handleFormSearch}
                         />
                         <SearchResultsWrapper>
