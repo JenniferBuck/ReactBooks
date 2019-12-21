@@ -12,34 +12,47 @@ module.exports = {
     }
 
   },
-
-  findById: async (req,res) =>{
-    try{
-    let dbModel = await db.Book.findById({_id:req.params.ids})
-    res.json(dbModel)
+  findById: async (req, res) => {
+    try {
+      let dbModel = await db.Book.findById({ _id: req.params.ids })
+      res.json(dbModel)
     }
-    catch (error){
+    catch (error) {
       res.status(422).json(error)
     }
 
   },
-  create: function (req, res) {
-    db.Book
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  create: async (req, res) => {
+
+    try {
+      let dbModel = await db.Book.create(req.body)
+      res.json(dbModel)
+
+    }
+    catch (error) {
+      res.status(422).json(error)
+    }
+    
   },
-  update: function (req, res) {
-    db.Book
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  update: async (req, res) => {
+    try {
+      let dbModel = await db.Book.findOneAndUpdate({ _id: req.params.id }, req.body)
+      res.json(dbModel)
+    }
+    catch (error) {
+      res.status(422).json(error)
+    }
+
   },
-  remove: function (req, res) {
-    db.Book
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  remove: async (req, res) => {
+    try {
+      let dbModel = await db.Book.findById({ _id: req.params.id })
+      await dbModel.remove()
+      res.json(dbModel)
+    }
+    catch (error) {
+      res.status(422).json(error)
+    }
+
   }
 };
